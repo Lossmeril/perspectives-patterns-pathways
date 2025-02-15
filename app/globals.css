@@ -66,6 +66,22 @@ h6 {
   font-weight: 700;
 }
 
+nav a:last-of-type {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 20px;
+  border: 3px solid var(--orange);
+  color: black;
+  transition: all 0.25s ease-in-out;
+}
+
+nav a:last-of-type:hover {
+  border: 3px solid var(--orange);
+  background-color: var(--orange);
+  transform: scale(1.05);
+}
+
 .check {
   position: relative;
   background: var(--red);
@@ -122,48 +138,4 @@ h6 {
 
 .check input[type="checkbox"]:checked + label {
   background: transparent;
-}
-
-.check label::before,
-.check label::after {
-  content: "· ·";
-  position: absolute;
-  overflow: hidden;
-  left: 0.5em;
-  top: 0.5em;
-  height: 1em;
-  letter-spacing: -0.04em;
-  color: #9b9b9b;
-  font-family: "Times New Roman", serif;
-  z-index: 2;
-  font-size: 0.6em;
-  border-radius: 0;
-  transform-origin: 0 0 -0.5em;
-  backface-visibility: hidden;
-}
-
-.check label::after {
-  content: "?";
-  top: 0.65em;
-  left: 0.6em;
-  height: 0.1em;
-  width: 0.35em;
-  font-size: 0.2em;
-  transform-origin: 0 0 -0.4em;
-}
-
-.check input[type="checkbox"]:checked + label::before,
-.check input[type="checkbox"]:checked + label::after {
-  left: 2.55em;
-  top: 0.4em;
-  line-height: 0.1em;
-  transform: rotateY(360deg);
-}
-
-.check input[type="checkbox"]:checked + label::after {
-  height: 0.16em;
-  top: 0.55em;
-  left: 2.6em;
-  font-size: 0.6em;
-  line-height: 0;
 }

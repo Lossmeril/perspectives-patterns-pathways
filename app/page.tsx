@@ -1,4 +1,5 @@
 import HeroBanner from "@/components/heroBanner";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   const inScale = 900;
@@ -6,10 +7,11 @@ export default function Home() {
 
   return (
     <main className="max-w-screen overflow-x-hidden">
-      <section className="w-full h-screen bg-beige p-20 flex flex-col justify-center align-middle gap-10">
+      <section className="w-full h-screen bg-beige px-20 pb-32 pt-10 flex flex-col justify-center align-middle gap-10">
+        <Navbar />
         <HeroBanner initialRotation={inRot} initialScale={inScale} />
         <div className="p-5 w-full text-center">
-          <h1 className="text-[2.5rem] mb-5">
+          <h1 className="text-[2.75rem] mb-5">
             Perspectives, patterns and pathways
           </h1>
           <div className="w-3/4 mx-auto flex flex-row justify-between">
@@ -21,7 +23,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full h-screen bg-beige grid place-items-center"></section>
+      <section className="w-full h-screen bg-white grid place-items-center"></section>
     </main>
   );
 }
