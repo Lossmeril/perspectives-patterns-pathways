@@ -38,9 +38,9 @@ const PatternBlock: React.FC<patternBlockProps> = ({
       style={{
         transform:
           "translate(-" +
-          (45 + x / 10) +
+          (47.5 + x / 20) +
           "%, -" +
-          (45 + y / 10) +
+          (47.5 + y / 20) +
           "%) rotate(" +
           rotation +
           "deg)",
@@ -85,64 +85,80 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
     };
   }, []);
 
+  const [effectsState, setEffectsState] = useState(false);
+
   return (
-    <div className="w-3/4 h-3/4 overflow-hidden bg-grass relative">
-      <PatternBlock
-        color="yellow"
-        scale={getScaleFromIteration(initialScale, 1).toString()}
-        rotation={initialRotation.toString()}
-        iteration={1}
-        x={mousePos.x}
-        y={mousePos.y}
-      >
+    <>
+      <div className="w-3/4 h-3/4 overflow-hidden bg-grass relative">
         <PatternBlock
-          color="orange"
-          scale={getScaleFromIteration(initialScale, 2).toString()}
-          rotation={"20"}
-          iteration={2}
-          x={mousePos.x}
-          y={mousePos.y}
+          color="yellow"
+          scale={getScaleFromIteration(initialScale, 1).toString()}
+          rotation={initialRotation.toString()}
+          iteration={1}
+          x={effectsState ? mousePos.x : 50}
+          y={effectsState ? mousePos.y : 50}
         >
           <PatternBlock
-            color="red"
-            scale={getScaleFromIteration(initialScale, 3).toString()}
+            color="orange"
+            scale={getScaleFromIteration(initialScale, 2).toString()}
             rotation={"20"}
-            iteration={3}
-            x={mousePos.x}
-            y={mousePos.y}
+            iteration={2}
+            x={effectsState ? mousePos.x : 50}
+            y={effectsState ? mousePos.y : 50}
           >
             <PatternBlock
-              color="grass"
-              scale={getScaleFromIteration(initialScale, 4).toString()}
+              color="red"
+              scale={getScaleFromIteration(initialScale, 3).toString()}
               rotation={"20"}
-              iteration={4}
-              x={mousePos.x}
-              y={mousePos.y}
+              iteration={3}
+              x={effectsState ? mousePos.x : 50}
+              y={effectsState ? mousePos.y : 50}
             >
               <PatternBlock
-                color="blue"
-                scale={getScaleFromIteration(initialScale, 5).toString()}
+                color="grass"
+                scale={getScaleFromIteration(initialScale, 4).toString()}
                 rotation={"20"}
-                iteration={5}
-                x={mousePos.x}
-                y={mousePos.y}
+                iteration={4}
+                x={effectsState ? mousePos.x : 50}
+                y={effectsState ? mousePos.y : 50}
               >
                 <PatternBlock
-                  color="black"
-                  scale={getScaleFromIteration(initialScale, 6).toString()}
+                  color="blue"
+                  scale={getScaleFromIteration(initialScale, 5).toString()}
                   rotation={"20"}
-                  iteration={6}
-                  x={mousePos.x}
-                  y={mousePos.y}
+                  iteration={5}
+                  x={effectsState ? mousePos.x : 50}
+                  y={effectsState ? mousePos.y : 50}
                 >
-                  <></>
+                  <PatternBlock
+                    color="black"
+                    scale={getScaleFromIteration(initialScale, 6).toString()}
+                    rotation={"20"}
+                    iteration={6}
+                    x={effectsState ? mousePos.x : 50}
+                    y={effectsState ? mousePos.y : 50}
+                  >
+                    <></>
+                  </PatternBlock>
                 </PatternBlock>
               </PatternBlock>
             </PatternBlock>
           </PatternBlock>
         </PatternBlock>
-      </PatternBlock>
-    </div>
+      </div>
+      <div className="absolute bottom-10 right-10 flex flex-row-reverse gap-5">
+        <div className="check">
+          <input
+            id="check"
+            type="checkbox"
+            checked={effectsState}
+            onChange={() => setEffectsState((prev) => !prev)}
+          />
+          <label htmlFor="check"></label>
+        </div>
+        <p>Disable motion</p>
+      </div>
+    </>
   );
 };
 
