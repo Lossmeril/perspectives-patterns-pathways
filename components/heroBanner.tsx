@@ -68,7 +68,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   initialRotation,
   initialScale,
 }) => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
     const handleMouseMove = (event: { clientX: number; clientY: number }) => {
@@ -77,7 +77,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         y: (event.clientY / window.innerHeight) * 100,
       });
 
-      if (window.innerWidth < 640) setEffectsState(false); // Mobile (sm)
+      if (window.innerWidth < 640) setEffectsState(false);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
