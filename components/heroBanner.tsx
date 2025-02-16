@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-function getScaleFromIteration(initial: number, iteration: number) {
+export function getScaleFromIteration(initial: number, iteration: number) {
   let scale = initial;
   for (let i = 1; i < iteration; i++) {
     scale = scale * Math.sin(0.785398163);

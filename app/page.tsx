@@ -1,7 +1,9 @@
 import HeroBanner from "@/components/heroBanner";
 import Navbar from "@/components/navbar";
+import SpeakerBox from "@/components/speakerBox";
+import { speakers } from "@/datasets/speakers";
 
-export default function Home() {
+const HomePage = () => {
   const inScale = 900;
   const inRot = -240;
 
@@ -23,7 +25,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full h-screen bg-white grid place-items-center"></section>
+      <section
+        id="speakers"
+        className="w-full min-h-screen py-[64px] bg-beige grid place-items-center"
+      >
+        <h2 className="text-3xl mb-20">Meet the speakers</h2>
+        <div className="grid grid-cols-4 gap-10">
+          {speakers.map((speaker) => (
+            <SpeakerBox key={speaker.id} speaker={speaker} />
+          ))}
+        </div>
+      </section>
     </main>
   );
-}
+};
+
+export default HomePage;

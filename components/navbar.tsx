@@ -11,7 +11,7 @@ const navbarItems: NavbarItem[] = [
   { text: "Speakers", link: "#speakers" },
   { text: "Panels", link: "#panels" },
   { text: "Contact", link: "#contact" },
-  { text: "Book your seat »", link: "https://google.com", blank: true },
+  { text: "Book your seat →", link: "https://google.com", blank: true },
 ];
 
 const Navbar = () => {
