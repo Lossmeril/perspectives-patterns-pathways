@@ -76,6 +76,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         x: (event.clientX / window.innerWidth) * 100,
         y: (event.clientY / window.innerHeight) * 100,
       });
+
+      if (window.innerWidth < 640) setEffectsState(false); // Mobile (sm)
     };
 
     window.addEventListener("mousemove", handleMouseMove);

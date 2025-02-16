@@ -42,7 +42,7 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
             className="w-60 xl:w-80 mx-auto aspect-square"
             style={{ backgroundColor: "var(--" + speaker.color + ")" }}
           >
-            <div className="w-full h-full aspect-square bg-beige rounded-full relative">
+            <div className="w-full h-full aspect-square bg-beige rounded-full relative overflow-hidden">
               <div
                 className="aspect-square bg-black absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{
@@ -54,8 +54,9 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
                   <Image
                     src={"/img/speakers/" + speaker.id + ".webp"}
                     alt={speaker.name}
-                    fill
-                    className="object-cover mix-blend-luminosity hover:mix-blend-normal transition-all"
+                    width={500}
+                    height={500}
+                    className="object-cover mix-blend-luminosity hover:mix-blend-normal"
                     style={{ transform: "rotate(-20deg)" }}
                   />
                 </div>
