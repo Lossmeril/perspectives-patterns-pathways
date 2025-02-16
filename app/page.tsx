@@ -38,7 +38,7 @@ const HomePage = () => {
         <Navbar />
         <HeroBanner initialRotation={inRot} initialScale={inScale} />
         <div className="p-5 w-full text-center">
-          <h1 className="text-3xl lg:text-[2em] xl:text-[2.75rem] mb-5">
+          <h1 className="text-3xl lg:text-[2em] xl:text-[2.75rem] mb-5 leading-10 xl:leading-[4rem]">
             Perspectives, patterns and pathways
           </h1>
           <div className="w-3/4 mx-auto flex flex-col lg:flex-row justify-between gap-y-5">
@@ -54,7 +54,7 @@ const HomePage = () => {
       </section>
       <section
         id="speakers"
-        className="w-full min-h-screen py-[64px] bg-beige grid place-items-center"
+        className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center"
       >
         <h2 className="text-center text-3xl mb-20">Meet the speakers</h2>
         <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-10">
