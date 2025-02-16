@@ -7,6 +7,12 @@ export type Speaker = {
 
 export const speakers: Speaker[] = [
   {
+    id: "kai",
+    name: "Kai Davis",
+    role: "Artist, performer, clown",
+    color: "orange",
+  },
+  {
     id: "chloe",
     name: "Chloe Gibson",
     role: "Film enthusiast",
