@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import SocialsButtons from "@/components/socialsButtons";
 
@@ -13,6 +14,7 @@ const MainLayout: React.FC<mainLayoutProps> = ({ children }) => {
       <SocialsButtons />
       <Navbar />
       {children}
+      <Footer />
     </main>
   );
 };
