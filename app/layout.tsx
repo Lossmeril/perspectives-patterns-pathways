@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-export const Bahnschrift = localFont({
+const bahnschrift = localFont({
   src: "../public/font/Bahnschrift.woff2",
 });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={Bahnschrift.className}>{children}</body>
+      <body className={bahnschrift.className}>{children}</body>
     </html>
   );
 }
