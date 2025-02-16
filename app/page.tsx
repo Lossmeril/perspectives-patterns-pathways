@@ -2,6 +2,7 @@
 
 import HeroBanner from "@/components/heroBanner";
 import Navbar from "@/components/navbar";
+import SocialsButtons from "@/components/socialsButtons";
 import SpeakerBox from "@/components/speakerBox";
 import { speakers } from "@/datasets/speakers";
 import { useState, useEffect } from "react";
@@ -34,6 +35,7 @@ const HomePage = () => {
 
   return (
     <main className="max-w-screen overflow-x-hidden">
+      <SocialsButtons />
       <section className="w-full h-screen bg-beige pb-10 lg:pb-32 pt-10 flex flex-col justify-center align-middle gap-10">
         <Navbar />
         <HeroBanner initialRotation={inRot} initialScale={inScale} />

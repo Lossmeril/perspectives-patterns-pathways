@@ -148,7 +148,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           </PatternBlock>
         </PatternBlock>
       </div>
-      <div className="fixed bottom-10 right-10 hidden md:flex flex-row-reverse items-center gap-3">
+      <div className="absolute bottom-10 right-10 hidden md:flex flex-row-reverse items-center gap-3 z-[100]">
         <div className="check">
           <input
             id="check"
