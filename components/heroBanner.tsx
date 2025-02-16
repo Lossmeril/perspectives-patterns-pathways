@@ -89,7 +89,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   return (
     <>
-      <div className="w-[80%] xl:w-3/4 h-3/4 overflow-hidden bg-grass relative mx-auto">
+      <div className="w-[80%] xl:w-3/4 h-screen md:h-3/4 overflow-hidden bg-grass relative mx-auto">
         <PatternBlock
           color="yellow"
           scale={getScaleFromIteration(initialScale, 1).toString()}
@@ -146,7 +146,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           </PatternBlock>
         </PatternBlock>
       </div>
-      <div className="fixed bottom-10 right-10 flex flex-row-reverse items-center gap-3">
+      <div className="fixed bottom-10 right-10 hidden md:flex flex-row-reverse items-center gap-3">
         <div className="check">
           <input
             id="check"

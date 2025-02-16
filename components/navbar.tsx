@@ -30,6 +30,8 @@ const Navbar = () => {
           </Link>
         ))}
       </nav>
+
+      {/* -------- DESKTOP */}
     </div>
   );
 };

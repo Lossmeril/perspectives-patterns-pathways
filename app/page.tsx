@@ -13,7 +13,7 @@ const HomePage = () => {
     const getBreakpointValue = () => {
       const width = window.innerWidth;
 
-      if (width < 640) return 400; // Mobile (sm)
+      if (width < 640) return 350; // Mobile (sm)
       if (width < 768) return 500; // Tablet (md)
       if (width < 1024) return 600; // Small Laptop (lg)
       if (width < 1280) return 800; // Desktop (xl)
@@ -34,7 +34,7 @@ const HomePage = () => {
 
   return (
     <main className="max-w-screen overflow-x-hidden">
-      <section className="w-full h-screen bg-beige pb-32 pt-10 flex flex-col justify-center align-middle gap-10">
+      <section className="w-full h-screen bg-beige pb-10 lg:pb-32 pt-10 flex flex-col justify-center align-middle gap-10">
         <Navbar />
         <HeroBanner initialRotation={inRot} initialScale={inScale} />
         <div className="p-5 w-full text-center">
@@ -56,7 +56,7 @@ const HomePage = () => {
         id="speakers"
         className="w-full min-h-screen py-[64px] bg-beige grid place-items-center"
       >
-        <h2 className="text-3xl mb-20">Meet the speakers</h2>
+        <h2 className="text-center text-3xl mb-20">Meet the speakers</h2>
         <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {speakers.map((speaker) => (
             <SpeakerBox key={speaker.id} speaker={speaker} />
