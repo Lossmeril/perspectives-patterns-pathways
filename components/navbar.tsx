@@ -1,3 +1,4 @@
+import { ticketsLink } from "@/datasets/links";
 import Link from "next/link";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
@@ -17,7 +18,7 @@ const navbarItems: NavbarItem[] = [
 ];
 
 const Navbar = () => {
-  const button = { text: "Book your seat →", link: "https://google.com" };
+  const button = { text: "Book your seat →", link: ticketsLink };
 
   const [menu, toggleMenu] = useState(false);
 

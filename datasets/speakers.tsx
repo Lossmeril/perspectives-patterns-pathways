@@ -21,19 +21,19 @@ export const speakers: Speaker[] = [
   {
     id: "saria",
     name: "Saria Nguyen",
-    role: "Unfathomable One of the Many",
+    role: "Unfathomable one of the many",
     color: "orange",
   },
   {
     id: "bahareh",
     name: "Bahareh Saadatfard",
-    role: "Architect, Enthusiast of Experimental Approachs",
+    role: "Architect, enthusiast of experimental approaches",
     color: "blue",
   },
   {
     id: "michal",
     name: "Michal Špitálský",
-    role: "Filmmaker and designer",
+    role: "Filmmaker, designer",
     color: "grass",
   },
 ];

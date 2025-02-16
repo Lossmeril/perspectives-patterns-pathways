@@ -3,7 +3,9 @@
 import HeroBanner from "@/components/heroBanner";
 
 import SpeakerBox from "@/components/speakerBox";
+import { facebook, instagram, linkedin } from "@/datasets/links";
 import { speakers } from "@/datasets/speakers";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const HomePage = () => {
@@ -66,12 +68,31 @@ const HomePage = () => {
       </section>
       <section
         id="panels"
-        className="w-full min-h-screen py-[64px] bg-red flex flex-col justify-center items-center"
+        className="w-full min-h-screen py-[64px] bg-red flex flex-col justify-center items-center text-beige"
       >
         <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
           Panels
         </h2>
         <p>To be announced soon</p>
+      </section>
+      <section
+        id="contact"
+        className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center"
+      >
+        <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
+          Get in touch
+        </h2>
+        <div className="w-4/5 xl:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+          <Link href={facebook} className="link" target="_blank">
+            <p className="text-xl">Facebook &#x2192;</p>
+          </Link>
+          <Link href={instagram} className="link" target="_blank">
+            <p className="text-xl">Instagram &#x2192;</p>
+          </Link>
+          <Link href={linkedin} className="link" target="_blank">
+            <p className="text-xl">LinkedIn &#x2192;</p>
+          </Link>
+        </div>
       </section>
     </>
   );
