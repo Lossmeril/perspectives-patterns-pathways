@@ -16,9 +16,9 @@ const navbarItems: NavbarItem[] = [
 
 const Navbar = () => {
   return (
-    <div className="w-3/4 mx-auto mb-5">
+    <div className="w-4/5 xl:w-3/4 mx-auto mb-5">
       {/* -------- DESKTOP */}
-      <nav className="w-full flex flex-row justify-between items-center gap-20">
+      <nav className="w-full hidden lg:flex flex-row justify-between items-center gap-10 xl:gap-20">
         {navbarItems.map((item) => (
           <Link
             key={item.link}
