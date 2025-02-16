@@ -66,6 +66,28 @@ h6 {
   font-weight: 700;
 }
 
+.link:not(nav a:last-of-type) p {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.link:not(nav a:last-of-type) p::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0%;
+  height: 0.25em;
+  background-color: var(--red);
+
+  transition: all 0.25s ease-in-out;
+}
+
+.link:not(nav a:last-of-type):hover p::after {
+  width: 100%;
+}
+
 nav a:last-of-type {
   display: block;
   overflow: hidden;

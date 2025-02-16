@@ -57,7 +57,7 @@ const HomePage = () => {
         className="w-full min-h-screen py-[64px] bg-beige grid place-items-center"
       >
         <h2 className="text-3xl mb-20">Meet the speakers</h2>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {speakers.map((speaker) => (
             <SpeakerBox key={speaker.id} speaker={speaker} />
           ))}
