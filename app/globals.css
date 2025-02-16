@@ -66,13 +66,17 @@ h6 {
   font-weight: 700;
 }
 
-.link:not(nav a:last-of-type) p {
+.speaker {
+  font-family: "Bahnschrift", sans-serif;
+}
+
+.link p {
   position: relative;
   width: fit-content;
   margin: 0 auto;
 }
 
-.link:not(nav a:last-of-type) p::after {
+.link p::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -84,11 +88,15 @@ h6 {
   transition: all 0.25s ease-in-out;
 }
 
-.link:not(nav a:last-of-type):hover p::after {
+.mobile-navbar .link p::after {
+  background-color: var(--white);
+}
+
+.link:hover p::after {
   width: 100%;
 }
 
-nav a:last-of-type {
+.button {
   display: block;
   overflow: hidden;
   position: relative;
@@ -98,7 +106,7 @@ nav a:last-of-type {
   transition: all 0.25s ease-in-out;
 }
 
-nav a:last-of-type:hover {
+.button:hover {
   border: 2px solid var(--red);
   background-color: var(--red);
   transform: scale(1.05);

@@ -1,8 +1,7 @@
 "use client";
 
 import HeroBanner from "@/components/heroBanner";
-import Navbar from "@/components/navbar";
-import SocialsButtons from "@/components/socialsButtons";
+
 import SpeakerBox from "@/components/speakerBox";
 import { speakers } from "@/datasets/speakers";
 import { useState, useEffect } from "react";
@@ -34,10 +33,8 @@ const HomePage = () => {
   const inRot = -240;
 
   return (
-    <main className="max-w-screen overflow-x-hidden">
-      <SocialsButtons />
-      <section className="w-full h-screen bg-beige pb-10 lg:pb-32 pt-10 flex flex-col justify-center align-middle gap-10">
-        <Navbar />
+    <>
+      <section className="w-full h-screen flex flex-col justify-center align-middle gap-5 md:gap-10 lg:pb-52 -mt-24 md:mt-0 md:pt-14 bg-beige ">
         <HeroBanner initialRotation={inRot} initialScale={inScale} />
         <div className="p-5 w-full text-center">
           <h1 className="text-3xl lg:text-[2em] xl:text-[2.75rem] mb-5 leading-10 xl:leading-[4rem]">
@@ -58,14 +55,25 @@ const HomePage = () => {
         id="speakers"
         className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center"
       >
-        <h2 className="text-center text-3xl mb-20">Meet the speakers</h2>
-        <div className="grid lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
+          Meet the speakers
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {speakers.map((speaker) => (
             <SpeakerBox key={speaker.id} speaker={speaker} />
           ))}
         </div>
       </section>
-    </main>
+      <section
+        id="panels"
+        className="w-full min-h-screen py-[64px] bg-red flex flex-col justify-center items-center"
+      >
+        <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
+          Panels
+        </h2>
+        <p>To be announced soon</p>
+      </section>
+    </>
   );
 };
 

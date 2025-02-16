@@ -91,7 +91,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   return (
     <>
-      <div className="w-[80%] xl:w-3/4 h-screen md:h-3/4 overflow-hidden bg-grass relative mx-auto">
+      <div className="w-[80%] xl:w-3/4 h-3/4 md:h-3/4 overflow-hidden bg-grass relative mx-auto mt-32 md:mt-0">
         <PatternBlock
           color="yellow"
           scale={getScaleFromIteration(initialScale, 1).toString()}

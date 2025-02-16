@@ -66,7 +66,7 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
         </Link>
       </div>
       <div className="text-center">
-        <h3 className="mb-2">{speaker.name}</h3>
+        <h3 className="text-xl speaker">{speaker.name}</h3>
         <p className="mb-6">{speaker.role}</p>
 
         <Link href={"/speaker/" + speaker.id} className="link">
