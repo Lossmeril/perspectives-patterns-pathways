@@ -71,15 +71,16 @@ nav a:last-of-type {
   overflow: hidden;
   position: relative;
   padding: 10px 20px;
-  border: 3px solid var(--orange);
+  border: 2px solid black;
   color: black;
   transition: all 0.25s ease-in-out;
 }
 
 nav a:last-of-type:hover {
-  border: 3px solid var(--orange);
-  background-color: var(--orange);
+  border: 2px solid var(--red);
+  background-color: var(--red);
   transform: scale(1.05);
+  color: var(--beige);
 }
 
 .check {

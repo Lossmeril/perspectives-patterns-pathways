@@ -146,7 +146,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           </PatternBlock>
         </PatternBlock>
       </div>
-      <div className="fixed bottom-10 right-10 flex flex-row-reverse gap-3">
+      <div className="fixed bottom-10 right-10 flex flex-row-reverse items-center gap-3">
         <div className="check">
           <input
             id="check"
@@ -156,7 +156,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           />
           <label htmlFor="check"></label>
         </div>
-        <p>Disable motion</p>
+        <p className="text-sm">Reduce motion</p>
       </div>
     </>
   );

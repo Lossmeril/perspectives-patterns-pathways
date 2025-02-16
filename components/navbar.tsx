@@ -25,7 +25,7 @@ const Navbar = () => {
             href={item.link}
             target={item.blank ? "_blank" : ""}
           >
-            <p className="navbar-link text-lg">{item.text}</p>
+            <p className="navbar-link text-md xl:text-lg">{item.text}</p>
           </Link>
         ))}
       </nav>
