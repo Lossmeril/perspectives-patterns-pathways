@@ -3,7 +3,7 @@
 import HeroBanner from "@/components/heroBanner";
 
 import SpeakerBox from "@/components/speakerBox";
-import { facebook, instagram, linkedin } from "@/datasets/links";
+import { facebook, instagram, linkedin, ticketsLink } from "@/datasets/links";
 import { speakers } from "@/datasets/speakers";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -77,11 +77,9 @@ const HomePage = () => {
       </section>
       <section
         id="contact"
-        className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center"
+        className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center gap-10 lg:gap-20"
       >
-        <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
-          Get in touch
-        </h2>
+        <h2 className="text-center text-xl lg:text-3xl">Get in touch</h2>
         <div className="w-4/5 xl:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
           <Link href={facebook} className="link" target="_blank">
             <p className="text-xl">Facebook &#x2192;</p>
@@ -93,6 +91,12 @@ const HomePage = () => {
             <p className="text-xl">LinkedIn &#x2192;</p>
           </Link>
         </div>
+
+        <Link href={ticketsLink} target={"_blank"} className="button">
+          <p className="navbar-link text-md xl:text-lg">
+            Book your seat &#x2192;
+          </p>
+        </Link>
       </section>
     </>
   );
