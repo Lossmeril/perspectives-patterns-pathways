@@ -25,6 +25,12 @@ export const speakers: Speaker[] = [
     color: "yellow",
   },
   {
+    id: "gareth",
+    name: "Gareth Matthews",
+    role: "Filmmaker",
+    color: "blue",
+  },
+  {
     id: "saria",
     name: "Saria Nguyen",
     role: "Unfathomable one of the many",
