@@ -13,9 +13,27 @@ export const speakers: Speaker[] = [
     color: "orange",
   },
   {
+    id: "vivian",
+    name: "Vivian Ekeh",
+    role: "Researcher, sport analyst",
+    color: "grass",
+  },
+  {
     id: "chloe",
     name: "Chloe Gibson",
     role: "Film enthusiast",
+    color: "red",
+  },
+  {
+    id: "annia",
+    name: "Annia Harrison",
+    role: "Historian, aspiring writer",
+    color: "blue",
+  },
+  {
+    id: "oluwadamilola",
+    name: "Oluwadamilola Idowu",
+    role: "Historical studies, impact-driven",
     color: "red",
   },
   {

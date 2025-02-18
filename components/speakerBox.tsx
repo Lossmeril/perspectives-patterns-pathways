@@ -17,11 +17,11 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
     const getBreakpointValue = () => {
       const width = window.innerWidth;
 
-      if (width < 640) return 15; // Mobile (sm)
-      if (width < 768) return 15; // Tablet (md)
+      if (width < 640) return 10; // Mobile (sm)
+      if (width < 768) return 10; // Tablet (md)
       if (width < 1024) return 15; // Small Laptop (lg)
       if (width < 1280) return 15; // Desktop (xl)
-      return 20; // Large Screens (2xl)
+      return 15; // Large Screens (2xl)
     };
 
     setBoxSize(getBreakpointValue());
@@ -35,11 +35,11 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 md:gap-8">
       <div className="w-full">
         <Link href={"/speaker/" + speaker.id}>
           <div
-            className="w-60 xl:w-80 mx-auto aspect-square"
+            className="w-40 md:w-60 xl:w-60 mx-auto aspect-square"
             style={{ backgroundColor: "var(--" + speaker.color + ")" }}
           >
             <div className="w-full h-full aspect-square bg-beige rounded-full relative overflow-hidden">
@@ -67,9 +67,12 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
       </div>
       <div className="text-center">
         <h3 className="text-xl speaker">{speaker.name}</h3>
-        <p className="mb-6">{speaker.role}</p>
+        <p className="text-sm md:text-md mb-6">{speaker.role}</p>
 
-        <Link href={"/speaker/" + speaker.id} className="link">
+        <Link
+          href={"/speaker/" + speaker.id}
+          className="link text-sm md:text-md "
+        >
           <p>Read more &#x2192;</p>
         </Link>
       </div>
