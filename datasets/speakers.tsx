@@ -34,7 +34,7 @@ export const speakers: Speaker[] = [
     id: "oluwadamilola",
     name: "Oluwadamilola Idowu",
     role: "Historical studies, impact-driven",
-    color: "red",
+    color: "yellow",
   },
   {
     id: "taylor",
@@ -58,7 +58,7 @@ export const speakers: Speaker[] = [
     id: "bahareh",
     name: "Bahareh Saadatfard",
     role: "Architect, enthusiast of experimental approaches",
-    color: "blue",
+    color: "red",
   },
   {
     id: "michal",
