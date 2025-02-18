@@ -4,4 +4,5 @@ export const instagram =
 export const linkedin =
   "www.linkedin.com/in/perspectives-patterns-and-pathways-32b873351";
 
-export const ticketsLink = "https://www.eventbrite.co.uk/";
+export const ticketsLink =
+  "https://www.eventbrite.co.uk/e/perspectives-patterns-and-pathways-tickets-1251596782669";
