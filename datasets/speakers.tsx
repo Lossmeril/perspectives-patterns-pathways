@@ -53,13 +53,13 @@ export const speakers: Speaker[] = [
     id: "taylor",
     name: "Taylor Jarman",
     role: "Film studies, internet nerd",
-    color: "yellow",
+    color: "blue",
   },
   {
     id: "gareth",
     name: "Gareth Matthews",
     role: "Filmmaker",
-    color: "blue",
+    color: "yellow",
   },
   {
     id: "saria",
