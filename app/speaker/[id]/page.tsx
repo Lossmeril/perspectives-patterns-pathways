@@ -1,6 +1,7 @@
 import { speakers } from "@/datasets/speakers";
 import Image from "next/image";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 
 export default async function SpeakerPage({
   params,
@@ -12,7 +13,7 @@ export default async function SpeakerPage({
   const speaker = speakers.find((x) => x.id === name);
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center align-middle gap-5 md:gap-10 lg:pb-52 -mt-24 md:mt-0 md:pt-14 bg-beige ">
+    <section className="w-full flex flex-col justify-center align-middle gap-5 md:gap-10 lg:pb-52 mt-6 md:mt-0 md:pt-14 bg-beige">
       <Link href="/" className="link mb-10">
         <p>&#x2190; Go back</p>
       </Link>
@@ -49,12 +50,40 @@ export default async function SpeakerPage({
           {speaker?.name}
         </h1>
       </div>
-      <div className="px-10">
-        <h2 className="bahnschrift text-center text-xl">
-          {"Title of " +
-            speaker?.name.split(" ")[0] +
-            "'s paper to be announced"}
+      <div className=" text-center px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
+        <p className="mb-10">{speaker?.name.split(" ")[0] + "'s paper"}</p>
+        <h2 className="bahnschrift text-center text-3xl">
+          {speaker?.paper
+            ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")
+            : ""}
         </h2>
+        <p className="text-xl mb-5">{speaker?.paper?.subtitle}</p>
+        <p className="w-full text-sm font-sans leading-relaxed mb-5 text-justify">
+          <Balancer>{speaker?.paper?.abstract}</Balancer>
+        </p>
+        <p className="mb-7">
+          <strong>Keywords: </strong>
+          {speaker?.paper?.keywords?.map((keyword, index) => (
+            <span key={keyword}>{(index !== 0 ? ", " : "") + keyword}</span>
+          ))}
+        </p>
+        {speaker?.paper?.image ? (
+          <>
+            <div className="w-full h-80 relative">
+              <Image
+                src={"/img/papers/" + speaker?.id + ".jpg"}
+                alt={speaker?.name ?? ""}
+                fill
+                className="object-cover mix-blend-luminosity"
+              />
+            </div>
+            <p className="text-xs text-left mt-3 opacity-50">
+              {speaker.paper.image.citation}
+            </p>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );
