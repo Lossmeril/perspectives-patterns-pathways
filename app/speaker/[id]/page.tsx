@@ -61,12 +61,16 @@ export default async function SpeakerPage({
         <p className="w-full text-sm font-sans leading-relaxed mb-5 text-justify">
           <Balancer>{speaker?.paper?.abstract}</Balancer>
         </p>
-        <p className="mb-7">
-          <strong>Keywords: </strong>
-          {speaker?.paper?.keywords?.map((keyword, index) => (
-            <span key={keyword}>{(index !== 0 ? ", " : "") + keyword}</span>
-          ))}
-        </p>
+        {speaker?.paper?.keywords ? (
+          <p className="mb-7">
+            <strong>Keywords: </strong>
+            {speaker?.paper?.keywords?.map((keyword, index) => (
+              <span key={keyword}>{(index !== 0 ? ", " : "") + keyword}</span>
+            ))}
+          </p>
+        ) : (
+          <></>
+        )}
         {speaker?.paper?.image ? (
           <>
             <div className="w-full h-80 relative">
