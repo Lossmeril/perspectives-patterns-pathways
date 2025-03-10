@@ -4,6 +4,7 @@ import HeroBanner from "@/components/heroBanner";
 
 import SpeakerBox from "@/components/speakerBox";
 import { instagram, linkedin, ticketsLink } from "@/datasets/links";
+import { panels } from "@/datasets/panels";
 import { speakers } from "@/datasets/speakers";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -68,12 +69,46 @@ const HomePage = () => {
       </section>
       <section
         id="panels"
-        className="w-full min-h-screen py-[64px] bg-red flex flex-col justify-center items-center text-beige"
+        className="w-full min-h-screen py-[64px] pt-[128px] bg-red flex flex-col justify-center items-center text-beige"
       >
         <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
           Panels
         </h2>
-        <p>To be announced soon</p>
+        <div className="w-full md:w-3/4 lg:w-1/2 mx-auto flex flex-col">
+          {panels.map((panel, i) => (
+            <div
+              key={panel.name}
+              className="w-full flex flex-row flex-nowrap gap-10 py-8 "
+              style={{ borderTop: i > 0 ? "1px solid var(--beige)" : "none" }}
+            >
+              <div className="w-1/2 flex flex-col gap-5">
+                <h3 className="text-xl lg:text-2xl text-left">{panel.name}</h3>
+                <p className="text-left">{panel.desc}</p>
+              </div>
+              <div className="w-1/2 flex flex-col gap-7">
+                {panel.speakers.map((speaker) => (
+                  <Link
+                    key={speaker.speaker.id}
+                    href={"/speaker/" + speaker.speaker.id}
+                    className="transition-all duration-300 hover:translate-x-2 hover:text-black"
+                  >
+                    <div className="flex flex-col gap-1">
+                      <h4 className="text-md speaker">
+                        {speaker.speaker.paper?.title +
+                          (speaker.speaker.paper?.subtitle
+                            ? ": " + speaker.speaker.paper?.subtitle
+                            : "")}
+                      </h4>
+                      <p className="text-left text-sm ml-5 opacity-75">
+                        {"// " + speaker.speaker.name}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       <section
         id="contact"

@@ -50,7 +50,7 @@ export default async function SpeakerPage({
           {speaker?.name}
         </h1>
       </div>
-      <div className=" text-center px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
+      <div className="text-center px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
         <p className="mb-10">{speaker?.name.split(" ")[0] + "'s paper"}</p>
         <h2 className="bahnschrift text-center text-3xl">
           {speaker?.paper
