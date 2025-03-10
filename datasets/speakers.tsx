@@ -4,6 +4,7 @@ export type Speaker = {
   role: string;
   color: string;
   paper?: Paper;
+  pronouns?: string;
 };
 
 export type Paper = {
@@ -139,6 +140,7 @@ export const speakers: Speaker[] = [
     name: "Michal Špitálský",
     role: "Filmmaker, designer",
     color: "grass",
+    pronouns: "he/him",
     paper: {
       title: "Hide your face",
       subtitle:

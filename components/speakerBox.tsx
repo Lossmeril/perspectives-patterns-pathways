@@ -66,9 +66,18 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
         </Link>
       </div>
       <div className="text-center">
-        <h3 className="text-xl speaker">{speaker.name}</h3>
-        <p className="text-sm md:text-md mb-6">{speaker.role}</p>
+        <h3 className="text-xl speaker">
+          {speaker.name}
+          {speaker.pronouns ? (
+            <span className="ml-2 text-xs opacity-50">
+              {"(" + speaker.pronouns + ")"}
+            </span>
+          ) : (
+            <></>
+          )}
+        </h3>
 
+        <p className="text-sm md:text-md mb-6">{speaker.role}</p>
         <Link
           href={"/speaker/" + speaker.id}
           className="link text-sm md:text-md "
