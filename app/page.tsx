@@ -69,23 +69,23 @@ const HomePage = () => {
       </section>
       <section
         id="panels"
-        className="w-full min-h-screen py-[64px] pt-[128px] bg-red flex flex-col justify-center items-center text-beige"
+        className="w-full min-h-screen py-[64px] lg:pt-[128px] bg-red flex flex-col justify-center items-center text-beige"
       >
         <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
           Panels
         </h2>
-        <div className="w-full md:w-3/4 lg:w-1/2 mx-auto flex flex-col">
+        <div className="w-3/4 lg:w-1/2 mx-auto flex flex-col text-center lg:text-left">
           {panels.map((panel, i) => (
             <div
               key={panel.name}
-              className="w-full flex flex-row flex-nowrap gap-10 py-8 "
+              className="w-full flex flex-col lg:flex-row flex-nowrap gap-5 lg:gap-10 py-8 "
               style={{ borderTop: i > 0 ? "1px solid var(--beige)" : "none" }}
             >
-              <div className="w-1/2 flex flex-col gap-5">
-                <h3 className="text-xl lg:text-2xl text-left">{panel.name}</h3>
-                <p className="text-left">{panel.desc}</p>
+              <div className="w-full lg:w-1/2 flex flex-col gap-5">
+                <h3 className="text-md lg:text-2xl">{panel.name}</h3>
+                <p className="text-sm lg:text-md">{panel.desc}</p>
               </div>
-              <div className="w-1/2 flex flex-col gap-7">
+              <div className="w-full lg:w-1/2 flex flex-col gap-7">
                 {panel.speakers.map((speaker) => (
                   <Link
                     key={speaker.speaker.id}
@@ -99,7 +99,7 @@ const HomePage = () => {
                             ? ": " + speaker.speaker.paper?.subtitle
                             : "")}
                       </h4>
-                      <p className="text-left text-sm ml-5 opacity-75">
+                      <p className="text-sm ml-0 lg:ml-5 opacity-75">
                         {"// " + speaker.speaker.name}
                       </p>
                     </div>
