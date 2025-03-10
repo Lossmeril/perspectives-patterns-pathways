@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
+import Balancer from "react-wrap-balancer";
 
 const HomePage = () => {
   const [inScale, setInScale] = useState<number>(900);
@@ -85,7 +86,9 @@ const HomePage = () => {
             >
               <div className="w-full lg:w-1/2 flex flex-col gap-5">
                 <h3 className="text-md lg:text-2xl">{panel.name}</h3>
-                <p className="text-sm lg:text-md">{panel.desc}</p>
+                <p className="text-sm lg:text-md">
+                  <Balancer>{panel.desc}</Balancer>
+                </p>
               </div>
               <div className="w-full lg:w-1/2 flex flex-col gap-7">
                 {panel.speakers.map((speaker) => (
