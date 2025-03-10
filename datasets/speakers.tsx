@@ -86,8 +86,10 @@ export const speakers: Speaker[] = [
     name: "Taylor Jarman",
     role: "Film studies, internet nerd",
     color: "blue",
+    pronouns: "they/them",
     paper: {
-      title: "[TITLE TO BE ANNOUNCED]",
+      title: "Children and Horror Today",
+      subtitle: "The New Dominance of the Internet",
       abstract:
         "An examination of contemporary children’s horror media with particular emphasis on the internet as an interface. I will be examining how children’s horror has shifted in a general way in order to provide context but with a focus on the shift from literary published formats in the case of Goosebumps, one of the most prominent examples of children’s horror, to creepypasta like The Slenderman, YouTube videos like The Backrooms and video games like Poppy’s Playtime or most notably Five Nights at Freddy’s. Horror and children have always been a polarising combination among the public and frequent moral panics have proven this. I am not interested in whether this change is or isn’t a positive development, I simply want to approach the intended readings of these media where possible, which may be difficult in the case of community built horrors that we see commonly among creepypasta and YouTube. I believe the moral panic following the tragic ‘Slenderman stabbing’ solidifies the internet as the next locus of horror for children to engage in and that the themes and messaging present within them have shifted. The blend of the nu-goth movement and the lack of regulation and censorship inherent to the internet have resulted in a much more open environment for children to engage with horror and as such, I believe an examination of children’s horror should be taken seriously and be conducted thoroughly.",
     },
