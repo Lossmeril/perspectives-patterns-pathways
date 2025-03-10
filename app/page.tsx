@@ -9,6 +9,8 @@ import { speakers } from "@/datasets/speakers";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import Image from "next/image";
+
 const HomePage = () => {
   const [inScale, setInScale] = useState<number>(900);
 
@@ -132,6 +134,19 @@ const HomePage = () => {
             Book your seat &#x2192;
           </p>
         </Link>
+
+        <div>
+          <h2 className="speaker text-xl text-center mb-5">Supported by</h2>
+
+          <Link href={"https://www.northumbria.ac.uk/"} target="_blank">
+            <Image
+              src="/img/NU_logo.png"
+              alt="Northumbria University Logo"
+              width={200}
+              height={200}
+            />
+          </Link>
+        </div>
       </section>
     </>
   );
