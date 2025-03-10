@@ -89,6 +89,9 @@ export default async function SpeakerPage({
           <></>
         )}
       </div>
+      <Link href="/" className="link mt-10">
+        <p>&#x2190; Go back</p>
+      </Link>
     </section>
   );
 }
