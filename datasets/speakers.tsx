@@ -131,8 +131,21 @@ export const speakers: Speaker[] = [
     name: "Bahareh Saadatfard",
     role: "Architect, enthusiast of experimental approaches",
     color: "red",
+    pronouns: "she/her",
     paper: {
-      title: "[TITLE TO BE ANNOUNCED]",
+      title: "The affect of materiality and form in urban constructed space",
+      subtitle: "The temporal layer of perception in Jahad Metro plaza, Tehran",
+      keywords: [
+        "metropolis",
+        "speed",
+        "urban spaces",
+        "time perception",
+        "architecture",
+        "materiality",
+        "affect",
+        "Jahad Metro plaza",
+        "deep mapping",
+      ],
       abstract:
         "Metropolises cannot be overlooked, as they have transformed many past aspects of human lived experience in urban environments, or introduced entirely new concepts, fundamentally shaping everyday life in the modern era. One of the most prominent of these concepts is speed. The astonishing acceleration of speed in the past century has compressed time into a flat surface of merely experiencing the present moment at an intensified pace, to the extent that time has lost its continuity and coherence with the past. Modern individuals have lost their sense of self as historical beings, and are threatened by the terror of time (pallasmaa, 2024). The transformation of the concept of speed has consistently challenged the quality of human experience in relation to the surrounding environment, to the extent that the sense of presence in urban spaces has been reduced to a superficial, hurried, and stress-inducing experience. In this context, architecture functions as an intervening medium in the perception of time in a space. The structure of the designed space and the materials are affective in shaping and creating a different level of sensory experience and perception of time, in a way that can evoke a slower and more gradual pace of the past (Hann, 2019).This article aims to revisit an example of urban functionality in the metropolitan area of Tehran, the capital of Iran, to examine the affect of the design and material selection on users’ perception of spatial experience from the perspective of time. The Jahad Metro Plaza project, awarded by the RIBA International Awards for Excellence in 2024, is located in a busy traffic intersection. By employing the deep mapping method, which narrates a section of the layers of urban events occurring around the project at a different pace compared to the internal layers of the project, this paper presents an alternative narrative of the affect materials and design have in creating the experience and perception of time in space, with a rhythm distinct from the urban flow.",
     },
