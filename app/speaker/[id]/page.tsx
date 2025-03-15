@@ -1,4 +1,4 @@
-import { speakers } from "@/datasets/speakers";
+import { keynoteSpeaker, speakers } from "@/datasets/speakers";
 import Image from "next/image";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
@@ -10,7 +10,8 @@ export default async function SpeakerPage({
 }) {
   const name = (await params).id;
 
-  const speaker = speakers.find((x) => x.id === name);
+  const speaker =
+    name === "michael" ? keynoteSpeaker : speakers.find((x) => x.id === name);
 
   return (
     <section className="w-full flex flex-col justify-center align-middle gap-5 md:gap-10 lg:pb-52 mt-6 md:mt-0 md:pt-14 bg-beige">
@@ -43,15 +44,23 @@ export default async function SpeakerPage({
         </div>
       </div>
       <div>
-        <p className="text-center mt-10 md:mt-0 mb-2 md:mb-5">
-          {speaker?.role}
-        </p>
+        <p className="text-center  md:mt-0 mb-2 md:mb-5">{speaker?.role}</p>
         <h1 className="text-3xl lg:text-[2em] xl:text-[2.75rem] mb-5 leading-10 xl:leading-[4rem] text-center">
           {speaker?.name}
         </h1>
+        {speaker?.id === "michael" ? (
+          <p className="text-center mt-10 md:mt-0 mb-2 md:mb-5 text-white uppercase font-bold text-xl bg-red px-10 py-4 w-full md:w-3/4 lg:w-1/2 mx-auto">
+            Keynote speaker
+          </p>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="text-center px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
-        <p className="mb-10">{speaker?.name.split(" ")[0] + "'s paper"}</p>
+        <p className="mb-10">
+          {speaker?.name.split(" ")[speaker?.id === "michael" ? 1 : 0] +
+            "'s paper"}
+        </p>
         <h2 className="bahnschrift text-center text-3xl">
           {speaker?.paper
             ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")

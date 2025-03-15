@@ -61,7 +61,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.hothouse {
   font-family: "hothouse", sans-serif;
   font-weight: 700;
 }
@@ -75,6 +76,10 @@ h6 {
   position: relative;
   width: fit-content;
   margin: 0 auto;
+}
+
+.link.keynote p {
+  margin: 0;
 }
 
 .link p::after {

@@ -5,12 +5,13 @@ import HeroBanner from "@/components/heroBanner";
 import SpeakerBox from "@/components/speakerBox";
 import { instagram, linkedin, ticketsLink } from "@/datasets/links";
 import { panels } from "@/datasets/panels";
-import { speakers } from "@/datasets/speakers";
+import { keynoteSpeaker, speakers } from "@/datasets/speakers";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
+import KeynoteBox from "@/components/keynoteBox";
 
 const HomePage = () => {
   const [inScale, setInScale] = useState<number>(900);
@@ -61,10 +62,12 @@ const HomePage = () => {
         id="speakers"
         className="w-full min-h-screen py-[64px] px-10 2xl:px-32 bg-beige flex flex-col justify-center items-center"
       >
-        <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
+        <h2 className="text-center text-xl lg:text-3xl mb-14">
           Meet the speakers
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-y-10 gap-x-0 md:gap-10">
+
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-y-10 gap-x-0 md:gap-10 place-content-center">
+          <KeynoteBox speaker={keynoteSpeaker} />
           {speakers.map((speaker) => (
             <SpeakerBox key={speaker.id} speaker={speaker} />
           ))}

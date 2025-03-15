@@ -19,7 +19,20 @@ export type PaperImage = {
   citation: string;
 };
 
+export const keynoteSpeaker: Speaker = {
+  id: "michael",
+  name: "Dr. Michael Waugh",
+  role: "KEYNOTE SPEAKER",
+  color: "white",
+};
+
 export const speakers: Speaker[] = [
+  {
+    id: "mario",
+    name: "Mario Conn La Vigna",
+    role: "Film fan and critic",
+    color: "blue",
+  },
   {
     id: "kai",
     name: "Kai Davis",
