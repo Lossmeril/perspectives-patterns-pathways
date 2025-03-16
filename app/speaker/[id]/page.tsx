@@ -1,6 +1,7 @@
 import { keynoteSpeaker, speakers } from "@/datasets/speakers";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import Balancer from "react-wrap-balancer";
 
 export default async function SpeakerPage({
@@ -46,7 +47,16 @@ export default async function SpeakerPage({
       <div>
         <p className="text-center  md:mt-0 mb-2 md:mb-5">{speaker?.role}</p>
         <h1 className="text-3xl lg:text-[2em] xl:text-[2.75rem] mb-5 leading-10 xl:leading-[4rem] text-center">
-          {speaker?.name}
+          {speaker?.name.split("Š").map((part, index) => (
+            <span key={part}>
+              {index > 0 ? (
+                <span className="s-with-caron relative">S</span>
+              ) : (
+                <></>
+              )}
+              {part}
+            </span>
+          ))}
         </h1>
         {speaker?.id === "michael" ? (
           <p className="text-center mt-10 md:mt-0 mb-2 md:mb-5 text-white uppercase font-bold text-xl bg-red px-10 py-4 w-full md:w-3/4 lg:w-1/2 mx-auto">

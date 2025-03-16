@@ -94,6 +94,15 @@ h6,
   transition: all 0.25s ease-in-out;
 }
 
+.s-with-caron::before {
+  content: "ˇ";
+  position: absolute;
+  font-size: 1.25em;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
 .mobile-navbar .link p::after {
   background-color: var(--white);
 }
