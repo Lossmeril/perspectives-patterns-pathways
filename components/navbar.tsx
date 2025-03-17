@@ -13,7 +13,7 @@ type NavbarItem = {
 const navbarItems: NavbarItem[] = [
   { text: "Home", link: "/" },
   { text: "Speakers", link: "#speakers" },
-  { text: "Panels", link: "#panels" },
+  { text: "Timetable", link: "#panels" },
   { text: "Contact", link: "#contact" },
 ];
 

@@ -71,41 +71,51 @@ export default async function SpeakerPage({
           {speaker?.name.split(" ")[speaker?.id === "michael" ? 1 : 0] +
             "'s paper"}
         </p>
-        <h2 className="bahnschrift text-center text-3xl">
-          {speaker?.paper
-            ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")
-            : ""}
-        </h2>
-        <p className="text-xl mb-5">{speaker?.paper?.subtitle}</p>
-        <p className="w-full text-sm font-sans leading-relaxed mb-5 text-justify">
-          <Balancer>{speaker?.paper?.abstract}</Balancer>
-        </p>
-        {speaker?.paper?.keywords ? (
-          <p className="mb-7">
-            <strong>Keywords: </strong>
-            {speaker?.paper?.keywords?.map((keyword, index) => (
-              <span key={keyword}>{(index !== 0 ? ", " : "") + keyword}</span>
-            ))}
-          </p>
-        ) : (
-          <></>
-        )}
-        {speaker?.paper?.image ? (
+        {speaker?.paper ? (
           <>
-            <div className="w-full h-80 relative">
-              <Image
-                src={"/img/papers/" + speaker?.id + ".jpg"}
-                alt={speaker?.name ?? ""}
-                fill
-                className="object-cover mix-blend-luminosity"
-              />
-            </div>
-            <p className="text-xs text-left mt-3 opacity-50">
-              {speaker.paper.image.citation}
+            <h2 className="bahnschrift text-center text-3xl">
+              {speaker?.paper
+                ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")
+                : ""}
+            </h2>
+            <p className="text-xl mb-5">{speaker?.paper?.subtitle}</p>
+            <p className="w-full text-sm font-sans leading-relaxed mb-5 text-justify">
+              <Balancer>{speaker?.paper?.abstract}</Balancer>
             </p>
+            {speaker?.paper?.keywords ? (
+              <p className="mb-7">
+                <strong>Keywords: </strong>
+                {speaker?.paper?.keywords?.map((keyword, index) => (
+                  <span key={keyword}>
+                    {(index !== 0 ? ", " : "") + keyword}
+                  </span>
+                ))}
+              </p>
+            ) : (
+              <></>
+            )}
+            {speaker?.paper?.image ? (
+              <>
+                <div className="w-full h-80 relative">
+                  <Image
+                    src={"/img/papers/" + speaker?.id + ".jpg"}
+                    alt={speaker?.name ?? ""}
+                    fill
+                    className="object-cover mix-blend-luminosity"
+                  />
+                </div>
+                <p className="text-xs text-left mt-3 opacity-50">
+                  {speaker.paper.image.citation}
+                </p>
+              </>
+            ) : (
+              <></>
+            )}
           </>
         ) : (
-          <></>
+          <h2 className="bahnschrift text-center text-3xl">
+            [[Paper to be announced]]
+          </h2>
         )}
       </div>
       <Link href="/" className="link mt-10">

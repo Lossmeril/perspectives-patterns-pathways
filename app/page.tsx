@@ -50,11 +50,14 @@ const HomePage = () => {
           <div className="w-3/4 mx-auto flex flex-col lg:flex-row justify-between gap-y-5">
             <p className="m-0 text-md lg:text-xl">MRes academic conference</p>
             <p className="m-0 text-md lg:text-xl">
-              1 / 4 / 2025 | 11:30 AM — 4:00 PM
+              1 / 4 / 2025 | 10:00 AM — 4:00 PM
             </p>
-            <p className="m-0 text-md lg:text-xl">
-              Sandyford building 405, Northumbria University
-            </p>
+            <div className="flex flex-col gap-2 items-end">
+              <p className="m-0 text-md lg:text-xl">
+                Ellison building B 003 + Sandyford building 405, Northumbria
+                Uni.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -78,7 +81,7 @@ const HomePage = () => {
         className="w-full min-h-screen py-[64px] lg:pt-[128px] bg-red flex flex-col justify-center items-center text-beige"
       >
         <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
-          Panels
+          Timetable and panels
         </h2>
         <div className="w-3/4 lg:w-1/2 mx-auto flex flex-col text-center lg:text-left">
           {panels.map((panel, i) => (
@@ -88,6 +91,29 @@ const HomePage = () => {
               style={{ borderTop: i > 0 ? "1px solid var(--beige)" : "none" }}
             >
               <div className="w-full lg:w-1/2 flex flex-col gap-5">
+                {panel.timeStart || panel.place ? (
+                  <div className="flex flex-col">
+                    {panel.timeStart ? (
+                      <p className="font-bold opacity-75">
+                        {panel.timeStart +
+                          (panel.timeEnd ? " — " + panel.timeEnd : "")}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                    {panel.place ? (
+                      <Link href={panel.place.address} target="_blank">
+                        <p className="text-sm italic transition-all hover:text-black">
+                          {panel.place.name + " →"}
+                        </p>
+                      </Link>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                ) : (
+                  <></>
+                )}
                 <h3 className="text-md lg:text-2xl">{panel.name}</h3>
                 <p className="text-sm lg:text-md">
                   <Balancer>{panel.desc}</Balancer>
@@ -102,7 +128,8 @@ const HomePage = () => {
                   >
                     <div className="flex flex-col gap-1">
                       <h4 className="text-md speaker">
-                        {speaker.speaker.paper?.title +
+                        {(speaker.speaker.paper?.title ??
+                          "[[Paper to be announced]]") +
                           (speaker.speaker.paper?.subtitle
                             ? ": " + speaker.speaker.paper?.subtitle
                             : "")}
