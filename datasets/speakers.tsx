@@ -73,7 +73,7 @@ export const speakers: Speaker[] = [
     id: "annia",
     name: "Annia Harrison",
     role: "Historian, aspiring writer",
-    color: "blue",
+    color: "yellow",
     paper: {
       title: "Biopics and the Civil Rights Movement",
       subtitle: "Interpreting and Analysing History",
@@ -85,7 +85,7 @@ export const speakers: Speaker[] = [
     id: "oluwadamilola",
     name: "Oluwadamilola Idowu",
     role: "Historical studies, impact-driven",
-    color: "yellow",
+    color: "red",
     paper: {
       title: "Colonial Legacies and Gender-based Violence",
       subtitle:
@@ -98,7 +98,7 @@ export const speakers: Speaker[] = [
     id: "taylor",
     name: "Taylor Jarman",
     role: "Film studies, internet nerd",
-    color: "blue",
+    color: "orange",
     pronouns: "they/them",
     paper: {
       title: "Children and Horror Today",
@@ -111,7 +111,7 @@ export const speakers: Speaker[] = [
     id: "gareth",
     name: "Gareth Matthews",
     role: "Filmmaker",
-    color: "yellow",
+    color: "blue",
     paper: {
       title: "Forced Perspective in Cinematography and Set Design",
       abstract:
@@ -143,7 +143,7 @@ export const speakers: Speaker[] = [
     id: "bahareh",
     name: "Bahareh Saadatfard",
     role: "Architect, enthusiast of experimental approaches",
-    color: "red",
+    color: "yellow",
     pronouns: "she/her",
     paper: {
       title: "The affect of materiality and form in urban constructed space",
