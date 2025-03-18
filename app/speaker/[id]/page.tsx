@@ -21,7 +21,12 @@ export default async function SpeakerPage({
       </Link>
       <div
         className="w-60 mx-auto aspect-square"
-        style={{ backgroundColor: "var(--" + speaker?.color + ")" }}
+        style={{
+          backgroundColor:
+            "var(--" +
+            (speaker?.id !== "michael" ? speaker?.color : "red") +
+            ")",
+        }}
       >
         <div className="w-full h-full aspect-square bg-beige rounded-full relative overflow-hidden">
           <div
