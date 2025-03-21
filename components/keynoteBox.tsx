@@ -82,7 +82,7 @@ const KeynoteBox: React.FC<KeynoteBoxProps> = ({ speaker }) => {
           )}
         </h3>
 
-        <p className="text-xs md:text-xs mb-3">
+        <p className="text-xs md:text-sm mb-3">
           <Balancer>{speaker.bio}</Balancer>
         </p>
         <Link

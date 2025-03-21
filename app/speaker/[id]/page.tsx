@@ -1,3 +1,4 @@
+import { places } from "@/datasets/panels";
 import { keynoteSpeaker, speakers } from "@/datasets/speakers";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,6 +65,15 @@ export default async function SpeakerPage({
           ))}
         </h1>
         {speaker?.id === "michael" ? (
+          <div className="text-center mb-10 px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
+            <p className="w-full text-sm font-sans leading-relaxed mb-5 text-justify">
+              <Balancer>{speaker?.bio}</Balancer>
+            </p>
+          </div>
+        ) : (
+          <></>
+        )}
+        {speaker?.id === "michael" ? (
           <p className="text-center mt-10 md:mt-0 mb-2 md:mb-5 text-white uppercase font-bold text-xl bg-red px-10 py-4 w-full md:w-3/4 lg:w-1/2 mx-auto">
             Keynote speaker
           </p>
@@ -72,13 +82,29 @@ export default async function SpeakerPage({
         )}
       </div>
       <div className="text-center px-10 w-full md:w-3/4 lg:w-1/2 mx-auto">
+        {speaker?.timeStart ? (
+          <div className="flex flex-col mb-10 gap-2">
+            <p className="">{speaker?.timeStart}</p>
+            <Link
+              href={speaker?.id !== "michael" ? places[1].name : places[0].name}
+              className="link"
+            >
+              <p className="">
+                {(speaker?.id !== "michael" ? places[1].name : places[0].name) +
+                  " →"}
+              </p>
+            </Link>
+          </div>
+        ) : (
+          <></>
+        )}
+
         <p className="mb-10">
           {speaker?.name.split(" ")[speaker?.id === "michael" ? 1 : 0] +
             "'s paper"}
         </p>
         {speaker?.paper ? (
           <>
-            <p className="text-lg mb-2 opacity-75">{speaker?.timeStart}</p>
             <h2 className="bahnschrift text-center text-3xl">
               {speaker?.paper
                 ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")
