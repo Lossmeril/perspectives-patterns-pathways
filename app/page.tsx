@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Balancer from "react-wrap-balancer";
 import KeynoteBox from "@/components/keynoteBox";
+import { triggerWarnings } from "@/datasets/triggers";
 
 const HomePage = () => {
   const [inScale, setInScale] = useState<number>(900);
@@ -83,16 +84,16 @@ const HomePage = () => {
         <h2 className="text-center text-xl lg:text-3xl mb-10 lg:mb-20">
           Timetable and panels
         </h2>
-        <div className="w-3/4 lg:w-1/2 mx-auto flex flex-col text-center lg:text-left">
+        <div className="w-3/4 lg:w-5/6 xl:w-1/2 mx-auto flex flex-col text-center lg:text-left">
           {panels.map((panel, i) => (
             <div
               key={panel.name}
-              className="w-full flex flex-col lg:flex-row flex-nowrap gap-5 lg:gap-10 py-8 "
+              className="w-full flex flex-col lg:flex-row flex-nowrap gap-5 lg:gap-10 py-8"
               style={{ borderTop: i > 0 ? "1px solid var(--beige)" : "none" }}
             >
-              <div className="w-full lg:w-1/2 flex flex-col gap-5">
+              <div className="w-full lg:w-1/2 flex flex-col gap-5 h-full justify-center lg:justify-start">
                 {panel.timeStart || panel.place ? (
-                  <div className="flex flex-col">
+                  <div className="flex flex-col justify-center">
                     {panel.timeStart ? (
                       <p className="font-bold opacity-75">
                         {panel.timeStart +
@@ -115,28 +116,59 @@ const HomePage = () => {
                   <></>
                 )}
                 <h3 className="text-md lg:text-2xl">{panel.name}</h3>
-                <p className="text-sm lg:text-md">
-                  <Balancer>{panel.desc}</Balancer>
-                </p>
+                {panel.desc ? (
+                  <p className="text-xs lg:text-sm lg:text-md">
+                    <Balancer>{panel.desc}</Balancer>
+                  </p>
+                ) : (
+                  <></>
+                )}
               </div>
-              <div className="w-full lg:w-1/2 flex flex-col gap-7">
+              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start gap-7">
                 {panel.speakers.map((speaker) => (
                   <Link
                     key={speaker.speaker.id}
                     href={"/speaker/" + speaker.speaker.id}
-                    className="transition-all duration-300 hover:translate-x-2 hover:text-black"
+                    className="transition-all duration-300 lg:hover:translate-x-2 hover:text-black"
                   >
-                    <div className="flex flex-col gap-1">
-                      <h4 className="text-md speaker">
-                        {(speaker.speaker.paper?.title ??
-                          "[[Paper to be announced]]") +
-                          (speaker.speaker.paper?.subtitle
-                            ? ": " + speaker.speaker.paper?.subtitle
-                            : "")}
-                      </h4>
-                      <p className="text-sm ml-0 lg:ml-5 opacity-75">
-                        {"// " + speaker.speaker.name}
-                      </p>
+                    <div className="flex flex-row flex-nowrap gap-2">
+                      <div className="flex flex-col gap-1">
+                        <p className="font-bold text-beige opacity-75">
+                          {speaker.speaker.timeStart}
+                        </p>
+                        <h4 className="text-md speaker">
+                          {(speaker.speaker.paper?.title ??
+                            "[[Paper to be announced]]") +
+                            (speaker.speaker.paper?.subtitle
+                              ? ": " + speaker.speaker.paper?.subtitle
+                              : "")}
+                        </h4>
+                        <p className="text-sm ml-0 lg:ml-5 opacity-75 text-beige">
+                          {"// " + speaker.speaker.name}
+                        </p>
+                        <div className="flex gap-3 justify-center lg:justify-start">
+                          {speaker.speaker.paper?.triggerWarnings?.map(
+                            (warning) => (
+                              <div
+                                className="flex flex-row flex-nowrap gap-1 justify-center items-center mt-1 ml-0 lg:ml-5"
+                                key={warning.id}
+                              >
+                                <Image
+                                  key={warning.id}
+                                  src={"/img/triggers/" + warning.id + ".svg"}
+                                  alt={warning.text}
+                                  title={warning.text}
+                                  width={30}
+                                  height={30}
+                                />
+                                <p className="text-xs text-beige opacity-75 ">
+                                  {warning.text}
+                                </p>
+                              </div>
+                            )
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 ))}
@@ -150,7 +182,7 @@ const HomePage = () => {
         className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center gap-10 lg:gap-20"
       >
         <h2 className="text-center text-xl lg:text-3xl">Get in touch</h2>
-        <div className="w-4/5 xl:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="w-4/5 xl:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           {/* <Link href={facebook} className="link" target="_blank">
             <p className="text-xl">Facebook &#x2192;</p>
           </Link> */}
@@ -159,17 +191,62 @@ const HomePage = () => {
           </Link>
           <Link href={linkedin} className="link" target="_blank">
             <p className="text-xl">LinkedIn &#x2192;</p>
+          </Link>{" "}
+          <Link
+            href={ticketsLink}
+            target={"_blank"}
+            className="button w-2/3 md:w-full lg:w-2/3 mx-auto"
+          >
+            <p className="navbar-link text-md xl:text-lg text-center">
+              Book your seat &#x2192;
+            </p>
           </Link>
         </div>
 
-        <Link href={ticketsLink} target={"_blank"} className="button">
-          <p className="navbar-link text-md xl:text-lg">
-            Book your seat &#x2192;
+        <div>
+          <h2 className="speaker text-xl text-center mb-2">
+            Inclusivity Commitment
+          </h2>
+          <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
+            <Balancer>
+              Respect, kindness, equity. We are committed to making everyone
+              feel welcome in the Perspectives, Patterns and Pathways
+              conference. Embracing and engaging with unique voices are at the
+              forefront of creating an inclusive academic environment. We have
+              taken great care to consider how we encapsulate and present this
+              conference as thoughtfully as possible and we encourage our
+              delegates to do the same. There will be an inclusivity officer
+              present. They will be happy to listen to any concerns delegates
+              may raise.
+            </Balancer>
           </p>
-        </Link>
+          <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-4 opacity-50">
+            We employ a system of trigger warnings to allow for viewers
+            sensitive to certain topics to decide whether the presentation is
+            suitable for them.
+          </p>
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-x-10 flex-wrap mt-4 opacity-50">
+            {triggerWarnings.map((warning) => (
+              <div
+                className="flex flex-row flex-nowrap gap-1 justify-center items-center"
+                key={warning.id}
+              >
+                <Image
+                  key={warning.id}
+                  src={"/img/triggers/" + warning.id + ".svg"}
+                  alt={warning.text}
+                  title={warning.text}
+                  width={40}
+                  height={40}
+                />
+                <p className="text-xs lg:text-sm">{warning.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div>
-          <h2 className="speaker text-xl text-center mb-5">Supported by</h2>
+          <h2 className="speaker text-xl text-center mb-3">Supported by</h2>
 
           <Link href={"https://www.northumbria.ac.uk/"} target="_blank">
             <Image

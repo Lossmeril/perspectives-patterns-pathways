@@ -78,6 +78,7 @@ export default async function SpeakerPage({
         </p>
         {speaker?.paper ? (
           <>
+            <p className="text-lg mb-2 opacity-75">{speaker?.timeStart}</p>
             <h2 className="bahnschrift text-center text-3xl">
               {speaker?.paper
                 ? speaker.paper.title + (speaker.paper.subtitle ? ":" : "")
@@ -96,6 +97,31 @@ export default async function SpeakerPage({
                   </span>
                 ))}
               </p>
+            ) : (
+              <></>
+            )}
+            {speaker?.paper?.triggerWarnings ? (
+              <>
+                <h3 className="bahnschrift mb-4 mt-20">Trigger warnings:</h3>
+                <div className="flex flex-row justify-center items-center gap-10 flex-wrap">
+                  {speaker.paper.triggerWarnings.map((warning) => (
+                    <div
+                      className="flex flex-row flex-nowrap gap-3 justify-center items-center"
+                      key={warning.id}
+                    >
+                      <Image
+                        key={warning.id}
+                        src={"/img/triggers/" + warning.id + ".svg"}
+                        alt={warning.text}
+                        title={warning.text}
+                        width={60}
+                        height={60}
+                      />
+                      <p>{warning.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
             ) : (
               <></>
             )}

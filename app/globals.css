@@ -82,6 +82,12 @@ h6,
   margin: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  .link.keynote p {
+    margin: 0 auto;
+  }
+}
+
 .link p::after {
   content: "";
   position: absolute;
@@ -136,9 +142,9 @@ h6,
 }
 
 .check input[type="checkbox"],
-.check label,
-.check label::before,
-.check label::after {
+.check .label,
+.check .label::before,
+.check .label::after {
   appearance: none;
   display: inline-block;
   font-size: inherit;
@@ -159,7 +165,7 @@ h6,
   cursor: pointer;
 }
 
-.check label {
+.check .label {
   width: 2.2em;
   height: 1em;
   background: var(--grass);
@@ -182,6 +188,6 @@ h6,
   left: 1.3em;
 }
 
-.check input[type="checkbox"]:checked + label {
+.check input[type="checkbox"]:checked + .label {
   background: transparent;
 }

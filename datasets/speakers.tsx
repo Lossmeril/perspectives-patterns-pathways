@@ -1,3 +1,5 @@
+import { TriggerWarning, triggerWarnings } from "./triggers";
+
 export type Speaker = {
   id: string;
   name: string;
@@ -6,6 +8,7 @@ export type Speaker = {
   paper?: Paper;
   pronouns?: string;
   bio?: string;
+  timeStart: string;
 };
 
 export type Paper = {
@@ -14,7 +17,7 @@ export type Paper = {
   abstract: string;
   keywords?: string[];
   image?: PaperImage;
-  triggerWarnings?: string[];
+  triggerWarnings?: TriggerWarning[];
 };
 
 export type PaperImage = {
@@ -24,9 +27,10 @@ export type PaperImage = {
 export const keynoteSpeaker: Speaker = {
   id: "michael",
   name: "Dr. Michael Waugh",
-  role: "KEYNOTE SPEAKER",
+  role: "Degree Programme Director for Media, Communication & Cultural Studies",
   color: "white",
   bio: "Dr. Michael Waugh is Degree Programme Director for Media, Communication and Cultural Studies at Newcastle University, leading the module Popular Culture: Futures and Fictions. Waugh’s research is focused on politics, identity and digitality in club and electronic music, foregrounding decolonial, queer and trans aesthetics and narratives in genres/movements such as deconstructed club, hyperpop and trap. He has published articles in Cambridge Journal of Popular Music and Critical Studies in Television, as well as chapters in Mute Records: Artists, Business, History and in two major anthologies about hip hop. He co-organised a series on digital music titled ‘Sound Salon’ at Somerset House with Jennifer Walshe and Adam Harper, provided a keynote talk at Berlin’s 3hd Festival and produced programme notes for 2015’s London Contemporary Music Festival. He has written press releases for musicians including Arca, aya, KUČKA, Jesse Kanda, Du Blonde and Derek Piotr.",
+  timeStart: "10:00 AM",
   paper: {
     title: "Total Freedom, NON States, boygirls and hardstyle hybrid theories",
     subtitle:
@@ -43,7 +47,7 @@ export const keynoteSpeaker: Speaker = {
       "identity",
       "social justice",
     ],
-    triggerWarnings: ["strong language", "flashing imagery"],
+    triggerWarnings: [triggerWarnings[0], triggerWarnings[1]],
   },
 };
 
@@ -54,12 +58,14 @@ export const speakers: Speaker[] = [
     role: "Film fan and critic",
     color: "blue",
     pronouns: "he/him",
+    timeStart: "12:08 PM",
   },
   {
     id: "kai",
     name: "Kai Davis",
     role: "Artist, performer, clown",
     color: "orange",
+    timeStart: "12:27 PM",
     paper: {
       title: "Prioritising the Performer",
       subtitle: "Shifting Perspectives and Embracing Ego",
@@ -73,6 +79,7 @@ export const speakers: Speaker[] = [
     name: "Vivian Ekeh",
     role: "Researcher, sport analyst",
     color: "grass",
+    timeStart: "3:31 PM",
     paper: {
       title: "The Different Types of Culture in Nigeria",
       abstract:
@@ -84,20 +91,24 @@ export const speakers: Speaker[] = [
     name: "Chloe Gibson",
     role: "Film enthusiast",
     color: "red",
+    timeStart: "2:27 PM",
+    pronouns: "she/her/they/them",
     paper: {
       title: "Nosferatu Returns",
       subtitle:
         "Or how a love of Tim Burton highlights the influence of nostalgia on Horror Films",
       abstract:
         "A shadowed mansion with dark clouds overhead with a title centred in the bottom of the screen, a close up of a woman with a pale face surrounded by near total darkness, or a dimly lit graveyard covered with snow and a singular figure walking towards a tombstone. These scenes from the 2024 Robert Eggers’ film Nosferatu are beautiful, haunting and somewhat familiar, particularly if you have seen Batman Returns (Burton, 1992). Over the last few years there have been many horror films made through a nostalgic lens. Whether it’s through the directors choice to bring back old characters (Halloween (Gordon-Green, 2018)), repetition of previous storylines and plots (Scream (Gillett and Bettinelli-Olpin, 2022)) , or simply through the aesthetic choices that have been made (Nosferatu (Eggers, 2024)). This paper will be focusing on the aesthetic choices that have been made in the recent horror film Nosferatu (Eggers, 2024) that are heavily inspired by Tim Burton. Using the works of Vera Dika (Recycled Culture in Contemporary Art and Film, 2003) and Steve Jones (The Metamodern Slasher Film, 2024), This paper will examine how Robert Eggers nostalgia for Tim Burton’s Batman Returns (1992) has affected his filmmaking choices, how Tim Burton’s own nostalgia for German expressionist films affected Batman Returns (1992) and how this throws a spotlight on the nature of nostalgia’s influence on the film making of horror.",
+
+      triggerWarnings: [triggerWarnings[2]],
     },
-    pronouns: "she/her/they/them",
   },
   {
     id: "annia",
     name: "Annia Harrison",
     role: "Historian, aspiring writer",
     color: "yellow",
+    timeStart: "3:12 PM",
     paper: {
       title: "Biopics and the Civil Rights Movement",
       subtitle: "Interpreting and Analysing History",
@@ -112,6 +123,7 @@ export const speakers: Speaker[] = [
     name: "Oluwadamilola Idowu",
     role: "Historical studies, impact-driven",
     color: "red",
+    timeStart: "2:53 PM",
     paper: {
       title: "Colonial Legacies and Gender-based Violence",
       subtitle:
@@ -126,11 +138,13 @@ export const speakers: Speaker[] = [
     role: "Film studies, internet nerd",
     color: "orange",
     pronouns: "they/them",
+    timeStart: "1:49 PM",
     paper: {
       title: "Children and Horror Today",
       subtitle: "The New Dominance of the Internet",
       abstract:
         "An examination of contemporary children’s horror media with particular emphasis on the internet as an interface. I will be examining how children’s horror has shifted in a general way in order to provide context but with a focus on the shift from literary published formats in the case of Goosebumps, one of the most prominent examples of children’s horror, to creepypasta like The Slenderman, YouTube videos like The Backrooms and video games like Poppy’s Playtime or most notably Five Nights at Freddy’s. Horror and children have always been a polarising combination among the public and frequent moral panics have proven this. I am not interested in whether this change is or isn’t a positive development, I simply want to approach the intended readings of these media where possible, which may be difficult in the case of community built horrors that we see commonly among creepypasta and YouTube. I believe the moral panic following the tragic ‘Slenderman stabbing’ solidifies the internet as the next locus of horror for children to engage in and that the themes and messaging present within them have shifted. The blend of the nu-goth movement and the lack of regulation and censorship inherent to the internet have resulted in a much more open environment for children to engage with horror and as such, I believe an examination of children’s horror should be taken seriously and be conducted thoroughly.",
+      triggerWarnings: [triggerWarnings[3]],
     },
   },
   {
@@ -138,6 +152,7 @@ export const speakers: Speaker[] = [
     name: "Gareth Matthews",
     role: "Filmmaker",
     color: "blue",
+    timeStart: "11:30 AM",
     paper: {
       title: "Forced Perspective in Cinematography and Set Design",
       abstract:
@@ -153,6 +168,7 @@ export const speakers: Speaker[] = [
     name: "Saria Nguyen",
     role: "Unfathomable one of the many",
     color: "orange",
+    timeStart: "11:49 AM",
     paper: {
       title:
         "The potential of anime-style fantasy video games in developing historical learning attitude among gamers",
@@ -172,6 +188,7 @@ export const speakers: Speaker[] = [
     role: "Architect, enthusiast of experimental approaches",
     color: "yellow",
     pronouns: "she/her",
+    timeStart: "1:30 PM",
     paper: {
       title: "The affect of materiality and form in urban constructed space",
       subtitle: "The temporal layer of perception in Jahad Metro plaza, Tehran",
@@ -196,6 +213,7 @@ export const speakers: Speaker[] = [
     role: "Filmmaker, designer",
     color: "grass",
     pronouns: "he/him",
+    timeStart: "2:08 PM",
     paper: {
       title: "Hide your face",
       subtitle:

@@ -27,8 +27,8 @@ export type Panel = {
 
 export const panels: Panel[] = [
   {
-    name: "Keynote paper",
-    desc: "Keynote speaker will be announced soon.",
+    name: "Keynote speaker",
+    desc: "Dr. Michael Waugh, Degree Programme Director for Media, Communication and Cultural Studies at Newcastle University, leading the module Popular Culture: Futures and Fictions, will open the conferece with a presentation of their research.",
     speakers: [{ speaker: keynoteSpeaker }],
     place: places[0],
     timeStart: "10:00 AM",
@@ -46,6 +46,13 @@ export const panels: Panel[] = [
     place: places[1],
     timeStart: "11:30 AM",
     timeEnd: "12:53 PM",
+  },
+  {
+    name: "Lunch time",
+    desc: "",
+    speakers: [],
+    timeStart: "12:53 PM",
+    timeEnd: "1:00 PM",
   },
   {
     name: "Patterns",
