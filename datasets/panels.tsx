@@ -45,6 +45,7 @@ export const panels: Panel[] = [
     ],
     place: places[1],
     timeStart: "11:30 AM",
+    timeEnd: "12:53 PM",
   },
   {
     name: "Patterns",
@@ -56,6 +57,8 @@ export const panels: Panel[] = [
       { speaker: speakers[9] },
     ],
     place: places[1],
+    timeStart: "1:30 PM",
+    timeEnd: "2:53 PM",
   },
   {
     name: "Pathways",
@@ -66,5 +69,7 @@ export const panels: Panel[] = [
       { speaker: speakers[5] },
     ],
     place: places[1],
+    timeStart: "2.53 PM",
+    timeEnd: "4:00 PM",
   },
 ];

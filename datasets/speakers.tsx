@@ -5,6 +5,7 @@ export type Speaker = {
   color: string;
   paper?: Paper;
   pronouns?: string;
+  bio?: string;
 };
 
 export type Paper = {
@@ -13,6 +14,7 @@ export type Paper = {
   abstract: string;
   keywords?: string[];
   image?: PaperImage;
+  triggerWarnings?: string[];
 };
 
 export type PaperImage = {
@@ -24,6 +26,25 @@ export const keynoteSpeaker: Speaker = {
   name: "Dr. Michael Waugh",
   role: "KEYNOTE SPEAKER",
   color: "white",
+  bio: "Dr. Michael Waugh is Degree Programme Director for Media, Communication and Cultural Studies at Newcastle University, leading the module Popular Culture: Futures and Fictions. Waugh’s research is focused on politics, identity and digitality in club and electronic music, foregrounding decolonial, queer and trans aesthetics and narratives in genres/movements such as deconstructed club, hyperpop and trap. He has published articles in Cambridge Journal of Popular Music and Critical Studies in Television, as well as chapters in Mute Records: Artists, Business, History and in two major anthologies about hip hop. He co-organised a series on digital music titled ‘Sound Salon’ at Somerset House with Jennifer Walshe and Adam Harper, provided a keynote talk at Berlin’s 3hd Festival and produced programme notes for 2015’s London Contemporary Music Festival. He has written press releases for musicians including Arca, aya, KUČKA, Jesse Kanda, Du Blonde and Derek Piotr.",
+  paper: {
+    title: "Total Freedom, NON States, boygirls and hardstyle hybrid theories",
+    subtitle:
+      "The conceptual aesthetics, sonic fictions and metal-as-fuck radicalism of deconstructed club",
+    abstract:
+      "The story of club music has been one of persistent de- and re-territorialisation, with Black queer and trans counterpublics consistently establishing radical communities and sonic fictions in response to their almost immediate capture by cisheteropatriarchal capital. During the 2010s, a strand of electronic dance music emerged that built this process into a self-consciously decolonial, queer, trans and crip project. Taking the disruptive ethos of NYC party GHE20G0TH1K (whose alumni include Venus X, Total Freedom and Shayne Oliver) as their foundation, collectives and artists such as Janus, NAAFI, boygirl, Arca, Chuquimamani-Condori and NON Worldwide combined insurrectionist manifestos, aggressive collagic juxtapositions and aesthetics lifted from metal, industrial and punk. ‘Deconstructed club’ (as it would later be dubbed) sought to elude essentialism through a rupturing of the relationship between the dancefloor, the art gallery, the fashion show, the university and the digital. This music did, however, face criticism for its noisy experimentation and the perceived elitism of its overt conceptualization. Similar disparagement accompanied ‘hardstyle’ subgenres like gabber, hard trance, donk and makina, but for the opposite reason: the relentlessness of its high-BPMs, coupled with its audience of predominantly white, working-class men, saw it dismissed as a dumbed-down embarrassment by more ‘discerning’ club-goers. The two demographic extremes of rave: deconstructed club as politically progressive but oft-impenetrably intellectualized; hard dance as apolitical – or even dangerously reactionary – and mindlessly gluttonous. In the 2020s, deconstructed club gleefully (d)evolved. Its producers and DJs retained their commitment to social justice and their metal-as-fuck stylization, but they swapped post-structuralist academicization for the escapist silliness of hard dance. aya, Kavari, bela, Medulasa and Lord Spikeheart redeployed screamo and nu metal histrisonics and theatrics to genderfuck hardstyle’s hyper-masc velocities. This paper is a yarn map of the complex, rhizomatic history of deconstructed club, as well as a demonstration of how inter-disciplinary scholarship within Arts and Cultural Studies provides opportunities for creative collaboration with working practitioners.",
+    keywords: [
+      "Deconstructed club",
+      "hyperpop",
+      "conceptronica",
+      "metal",
+      "Post-Internet",
+      "sonic fiction",
+      "identity",
+      "social justice",
+    ],
+    triggerWarnings: ["strong language", "flashing imagery"],
+  },
 };
 
 export const speakers: Speaker[] = [
@@ -32,6 +53,7 @@ export const speakers: Speaker[] = [
     name: "Mario Conn La Vigna",
     role: "Film fan and critic",
     color: "blue",
+    pronouns: "he/him",
   },
   {
     id: "kai",
@@ -44,6 +66,7 @@ export const speakers: Speaker[] = [
       abstract:
         "This paper explores performance for the performer. Performance theory often prioritises the audience’s perspective, in this paper however, I will reveal what happens when the performers experience is at the forefront of the performance creation process. Using my own performance practice as a starting point, by examining the work I created with Gays in Space Theatre Collective – a company that spawned out of the brief “you can choose to do whatever you’d like” and subsequently lead to a beautifully messy, chaotic and hedonistic collaborative performance piece. I will then delve into other types of performance that one could consider as being for the performer, such as community performance from Theatre of the Oppressed, biographical performance, drag and cabaret performance, and performance art. I will also look at examples where the dynamic between audience and performer is deliberately positioned against normative expectations, such as the work of Forced Entertainment, where the performer isn’t just prioritised, but the work actively seeks to bore, annoy or bring discomfort to audiences. By placing affect theory in conversation with theories of narrative, I will investigate what happens when we change our perspective on who performance is for. There is of course some element of self-interest in all performance, including ego, stardom seeking and at its most basic simple enjoyment –  I will argue however, that the process actively embracing this, allows for unique and interesting pathways in audience/performer interaction. ",
     },
+    pronouns: "they/them",
   },
   {
     id: "vivian",
@@ -68,6 +91,7 @@ export const speakers: Speaker[] = [
       abstract:
         "A shadowed mansion with dark clouds overhead with a title centred in the bottom of the screen, a close up of a woman with a pale face surrounded by near total darkness, or a dimly lit graveyard covered with snow and a singular figure walking towards a tombstone. These scenes from the 2024 Robert Eggers’ film Nosferatu are beautiful, haunting and somewhat familiar, particularly if you have seen Batman Returns (Burton, 1992). Over the last few years there have been many horror films made through a nostalgic lens. Whether it’s through the directors choice to bring back old characters (Halloween (Gordon-Green, 2018)), repetition of previous storylines and plots (Scream (Gillett and Bettinelli-Olpin, 2022)) , or simply through the aesthetic choices that have been made (Nosferatu (Eggers, 2024)). This paper will be focusing on the aesthetic choices that have been made in the recent horror film Nosferatu (Eggers, 2024) that are heavily inspired by Tim Burton. Using the works of Vera Dika (Recycled Culture in Contemporary Art and Film, 2003) and Steve Jones (The Metamodern Slasher Film, 2024), This paper will examine how Robert Eggers nostalgia for Tim Burton’s Batman Returns (1992) has affected his filmmaking choices, how Tim Burton’s own nostalgia for German expressionist films affected Batman Returns (1992) and how this throws a spotlight on the nature of nostalgia’s influence on the film making of horror.",
     },
+    pronouns: "she/her/they/them",
   },
   {
     id: "annia",
@@ -79,7 +103,9 @@ export const speakers: Speaker[] = [
       subtitle: "Interpreting and Analysing History",
       abstract:
         "History is not isolated to books and scholarly articles. Understanding of the past has been expressed in a multitude of ways by academics and creatives alike. Indeed, a historical topic like the civil rights movement in the United States has inspired a multitude of creative projects and interpretations designed for consumption beyond scholarly circles. This paper analyses and evaluates biographical films regarding the civil rights movement where these films are a source for historical understanding of the era. Additionally, these films are a reflection and insight into the sociopolitical climate of when they were made. Biopics are often the first (and, for many, only) historical interpretations of real-life people and significant events. Decades of community activism and wider history are summarised by screenwriters, edited by producers and condensed into feature length films. Additionally, biopics interpret history not with the detachment of an academic but with a narrative purpose and cultural message of an artist. While the paper cannot encapsulate every cinematic production of the civil rights movement or the decisions made to create these films, it will identify shared themes, narrative devices and messages conveyed in these biopics. A key theme of this research will be how biopics heavily influence our memory and understanding of the civil rights movement. From Malcolm X to Mamie Till-Mobley, this paper will assess how commemoration of individual figures has also impacted how we view and remember a movement built upon mass action and grassroots community activism. The paper will discuss and evaluate these biopics as a historical interpretation and where they are situated within related academic literature.",
+      keywords: ["historiography", "memory", "US History"],
     },
+    pronouns: "she/her",
   },
   {
     id: "oluwadamilola",
@@ -138,6 +164,7 @@ export const speakers: Speaker[] = [
         "learning attitude",
       ],
     },
+    pronouns: "she/her",
   },
   {
     id: "bahareh",
