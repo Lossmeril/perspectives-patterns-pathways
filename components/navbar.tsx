@@ -15,6 +15,7 @@ const navbarItems: NavbarItem[] = [
   { text: "Speakers", link: "#speakers" },
   { text: "Timetable", link: "#panels" },
   { text: "Contact", link: "#contact" },
+  { text: "Inclusivity", link: "#inclusivity" },
 ];
 
 const Navbar = () => {

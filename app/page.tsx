@@ -204,7 +204,7 @@ const HomePage = () => {
         </div>
 
         <div>
-          <h2 className="speaker text-xl text-center mb-2">
+          <h2 id="inclusivity" className="speaker text-xl text-center mb-2">
             Inclusivity Commitment
           </h2>
           <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
