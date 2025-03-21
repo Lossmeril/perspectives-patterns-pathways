@@ -10,13 +10,19 @@ const SocialsButtons = () => {
           <FaFacebook size={24} />
         </div>
       </Link> */}
-      <Link href={instagram} target="_blank">
-        <div className="grid place-content-center w-14 h-14 bg-black hover:bg-red transition-all text-beige">
+      <Link href={instagram} target="_blank" aria-label="Instagram">
+        <div
+          className="grid place-content-center w-14 h-14 bg-black hover:bg-red transition-all text-beige"
+          aria-hidden="true"
+        >
           <FaInstagram size={26} />
         </div>
       </Link>
-      <Link href={linkedin} target="_blank">
-        <div className="grid place-content-center w-14 h-14 bg-black hover:bg-red transition-all text-beige">
+      <Link href={linkedin} target="_blank" aria-label="LinkedIn">
+        <div
+          className="grid place-content-center w-14 h-14 bg-black hover:bg-red transition-all text-beige"
+          aria-hidden="true"
+        >
           <FaLinkedin size={26} />
         </div>
       </Link>

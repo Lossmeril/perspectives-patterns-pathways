@@ -156,9 +156,15 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
             checked={effectsState}
             onChange={() => setEffectsState((prev) => !prev)}
           />
-          <label htmlFor="check"></label>
+          <div
+            onClick={() => setEffectsState((prev) => !prev)}
+            className="label"
+          ></div>
         </div>
-        <p className="text-sm">Reduce motion</p>
+        <label className="text-sm" htmlFor="check">
+          Reduce motion
+        </label>
+        {/* <p className="text-sm">Reduce motion</p> */}
       </div>
     </>
   );
