@@ -80,6 +80,7 @@ export const speakers: Speaker[] = [
     role: "Researcher, sport analyst",
     color: "grass",
     timeStart: "3:31 PM",
+    pronouns: "she/her",
     paper: {
       title: "The Different Types of Culture in Nigeria",
       abstract:
@@ -124,6 +125,7 @@ export const speakers: Speaker[] = [
     role: "Historical studies, impact-driven",
     color: "red",
     timeStart: "2:53 PM",
+    pronouns: "she/her",
     paper: {
       title: "Colonial Legacies and Gender-based Violence",
       subtitle:
