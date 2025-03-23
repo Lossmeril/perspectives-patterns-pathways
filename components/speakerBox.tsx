@@ -65,17 +65,19 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
           </div>
         </Link>
       </div>
-      <div className="text-center">
-        <h3 className="text-xl speaker">
-          {speaker.name}
+      <div className="text-center flex flex-col justify-between h-full">
+        <div className="flex flex-col lg:flex-row flex-nowrap justify-start items-center gap-y-1 gap-x-2 h-full">
+          <h3 className="text-lg lg:text-xl speaker leading-none">
+            {speaker.name}
+          </h3>
           {speaker.pronouns ? (
-            <span className="ml-2 text-xs opacity-50">
+            <p className="text-xs opacity-50 mb-3 lg:mb-0">
               {"(" + speaker.pronouns + ")"}
-            </span>
+            </p>
           ) : (
             <></>
           )}
-        </h3>
+        </div>
 
         <p className="text-sm md:text-md mb-6">{speaker.role}</p>
         <Link

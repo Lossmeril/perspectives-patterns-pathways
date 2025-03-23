@@ -70,7 +70,7 @@ const HomePage = () => {
           Meet the speakers
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-y-10 gap-x-0 md:gap-10 place-content-center">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-y-10 gap-x-5 md:gap-10 place-content-center">
           <KeynoteBox speaker={keynoteSpeaker} />
           {speakers.map((speaker) => (
             <SpeakerBox key={speaker.id} speaker={speaker} />

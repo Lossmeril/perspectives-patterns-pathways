@@ -156,6 +156,7 @@ export const speakers: Speaker[] = [
     role: "Filmmaker",
     color: "blue",
     timeStart: "11:30 AM",
+    pronouns: "he/him",
     paper: {
       title: "Forced Perspective in Cinematography and Set Design",
       abstract:
