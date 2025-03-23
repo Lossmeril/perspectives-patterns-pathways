@@ -59,6 +59,12 @@ export const speakers: Speaker[] = [
     color: "blue",
     pronouns: "he/him",
     timeStart: "12:08 PM",
+    paper: {
+      title: "Rooting for the bad guy",
+      subtitle: "The ways in which villainous characters appeal to audiences",
+      abstract:
+        "Since the dawn of storytelling and our extensive history of sagas and epics, we have consistently celebrated heroic protagonists. As audiences, we are captivated by characters who embody the best of humanity, showcasing admirable qualities such as strength, bravery, and sacrifice. These figures serve as sources of inspiration for those striving to embrace and exhibit their best selves. Creators and audiences alike have been motivated by the strength of Superman, the determination of Rocky Balboa, and the resilience of Captain America. However, alongside these idealized representations of humanity’s finest traits, there are also portrayals of our deepest flaws. As highlighted in Shakespeare's Macbeth, our moral compass can become obscured, allowing immoral tendencies to take over. An immoral protagonist does not oppose a hero in the same way a villain does; instead, they inhabit the grey area that lies between good and evil, illustrating how easily a character can shift along this spectrum. The character of Homelander in Amazon's The Boys epitomizes this concept. He is a genetically engineered superhuman with the potential to be a god-like saviour to humanity; instead, he channels his powers to manifest his violent and psychopathic behaviours stemming from his insecurities. This paper will delve into how this specific anti-hero, despite his immorality, remains a compelling and entertaining protagonist, uncovering the subconscious ways in which audiences are drawn to violence and immorality. This exploration is increasingly relevant in a post-censorship world, where content is more explicit than ever, transcending traditional moral boundaries.",
+    },
   },
   {
     id: "kai",
