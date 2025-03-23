@@ -66,7 +66,7 @@ const SpeakerBox: React.FC<SpeakerBoxProps> = ({ speaker }) => {
         </Link>
       </div>
       <div className="text-center flex flex-col justify-between h-full">
-        <div className="flex flex-col lg:flex-row flex-nowrap justify-start items-center gap-y-1 gap-x-2 h-full">
+        <div className="flex flex-col lg:flex-row flex-nowrap justify-start lg:justify-center items-center gap-y-1 gap-x-2 h-full">
           <h3 className="text-lg lg:text-xl speaker leading-none">
             {speaker.name}
           </h3>
