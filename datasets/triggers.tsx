@@ -9,4 +9,5 @@ export const triggerWarnings: TriggerWarning[] = [
   { id: "fear", text: "Disturbing imagery" },
   // { id: "violence", text: "Violence" },
   { id: "child-violence", text: "Violence towards children" },
+  { id: "gender-based-violence", text: "Gender-based violence" },
 ];
