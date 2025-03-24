@@ -52,7 +52,7 @@ export const panels: Panel[] = [
     desc: "",
     speakers: [],
     timeStart: "12:53 PM",
-    timeEnd: "1:00 PM",
+    timeEnd: "1:30 PM",
   },
   {
     name: "Patterns",
