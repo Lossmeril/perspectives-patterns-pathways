@@ -179,7 +179,7 @@ const HomePage = () => {
       </section>
       <section
         id="contact"
-        className="w-full min-h-screen py-[64px] bg-beige flex flex-col justify-center items-center gap-10 lg:gap-20"
+        className="w-full min-h-screen py-[150px] bg-beige flex flex-col justify-center items-center gap-10 lg:gap-20"
       >
         <h2 className="text-center text-xl lg:text-3xl">Get in touch</h2>
         <div className="w-4/5 xl:w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
@@ -207,6 +207,9 @@ const HomePage = () => {
           <h2 id="inclusivity" className="speaker text-xl text-center mb-2">
             Inclusivity Commitment
           </h2>
+          <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
+            Inclusivity officer: Kai Davis
+          </p>
           <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
             <Balancer>
               Respect, kindness, equity. We are committed to making everyone
@@ -243,6 +246,24 @@ const HomePage = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div>
+          <h2 id="inclusivity" className="speaker text-xl text-center mb-2">
+            Ethics Statement
+          </h2>
+          <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
+            Ethics officer: Chloe Gibson
+          </p>
+          <p className="text-xs lg:text-sm w-full px-10 lg:w-1/2 lg:mx-auto text-center mt-3">
+            <Balancer>
+              Perspectives, Patterns and Pathways is dedicated to ensuring that
+              our research is done with fairness and respect. Each of the
+              participants have conducted their research in a transparent and
+              diligent manner to ensure that our work is as objective and
+              accurate. We are committed to creating an environment where ethics
+              and fairness are at the heart of what we do.
+            </Balancer>
+          </p>
         </div>
 
         <div>
