@@ -68,6 +68,7 @@ export const speakers: Speaker[] = [
         triggerWarnings[0],
         triggerWarnings[1],
         triggerWarnings[2],
+        triggerWarnings[6],
       ],
     },
   },
@@ -113,7 +114,7 @@ export const speakers: Speaker[] = [
       abstract:
         "A shadowed mansion with dark clouds overhead with a title centred in the bottom of the screen, a close up of a woman with a pale face surrounded by near total darkness, or a dimly lit graveyard covered with snow and a singular figure walking towards a tombstone. These scenes from the 2024 Robert Eggers’ film Nosferatu are beautiful, haunting and somewhat familiar, particularly if you have seen Batman Returns (Burton, 1992). Over the last few years there have been many horror films made through a nostalgic lens. Whether it’s through the directors choice to bring back old characters (Halloween (Gordon-Green, 2018)), repetition of previous storylines and plots (Scream (Gillett and Bettinelli-Olpin, 2022)) , or simply through the aesthetic choices that have been made (Nosferatu (Eggers, 2024)). This paper will be focusing on the aesthetic choices that have been made in the recent horror film Nosferatu (Eggers, 2024) that are heavily inspired by Tim Burton. Using the works of Vera Dika (Recycled Culture in Contemporary Art and Film, 2003) and Steve Jones (The Metamodern Slasher Film, 2024), This paper will examine how Robert Eggers nostalgia for Tim Burton’s Batman Returns (1992) has affected his filmmaking choices, how Tim Burton’s own nostalgia for German expressionist films affected Batman Returns (1992) and how this throws a spotlight on the nature of nostalgia’s influence on the film making of horror.",
 
-      triggerWarnings: [triggerWarnings[2]],
+      triggerWarnings: [triggerWarnings[2], triggerWarnings[6]],
     },
   },
   {
@@ -248,6 +249,7 @@ export const speakers: Speaker[] = [
         citation:
           "Source: Harvey, A. 2014. Face to Anti-Face. [Online]. Accessed 6 March 2025. Available from: https://archive.nytimes.com/www.nytimes.com/interactive/2013/12/14/opinion/sunday/20121215_ANTIFACE_OPART.html",
       },
+      triggerWarnings: [triggerWarnings[6]],
     },
   },
 ];

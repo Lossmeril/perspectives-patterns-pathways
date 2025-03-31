@@ -11,4 +11,5 @@ export const triggerWarnings: TriggerWarning[] = [
   { id: "child-violence", text: "Violence towards children" },
   { id: "gender-based-violence", text: "Gender-based violence" },
   { id: "15-plus", text: "Suitable for ages 15 and up" },
+  { id: "minor-story-spoilers", text: "Minor story spoilers" },
 ];

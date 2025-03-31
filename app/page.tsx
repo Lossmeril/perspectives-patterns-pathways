@@ -146,11 +146,11 @@ const HomePage = () => {
                         <p className="text-sm ml-0 lg:ml-5 opacity-75 text-beige">
                           {"// " + speaker.speaker.name}
                         </p>
-                        <div className="flex gap-3 justify-center lg:justify-start">
+                        <div className="grid grid-cols-2 gap-3 items-center lg:items-start">
                           {speaker.speaker.paper?.triggerWarnings?.map(
                             (warning) => (
                               <div
-                                className="flex flex-row flex-nowrap gap-1 justify-center items-center mt-1 ml-0 lg:ml-5"
+                                className="flex flex-row flex-nowrap gap-1 justify-start items-center mt-1 ml-0 lg:ml-5"
                                 key={warning.id}
                               >
                                 <Image
@@ -228,7 +228,7 @@ const HomePage = () => {
             sensitive to certain topics to decide whether the presentation is
             suitable for them.
           </p>
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-x-10 flex-wrap mt-4 opacity-50">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-x-10 flex-wrap mt-4 opacity-50 lg:mx-20">
             {triggerWarnings.map((warning) => (
               <div
                 className="flex flex-row flex-nowrap gap-1 justify-center items-center"
