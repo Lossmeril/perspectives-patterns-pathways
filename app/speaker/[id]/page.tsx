@@ -153,7 +153,7 @@ export default async function SpeakerPage({
             )}
             {speaker?.paper?.image ? (
               <>
-                <div className="w-full h-80 relative">
+                <div className="w-full h-80 relative mt-10">
                   <Image
                     src={"/img/papers/" + speaker?.id + ".jpg"}
                     alt={speaker?.name ?? ""}
